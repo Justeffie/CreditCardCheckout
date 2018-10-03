@@ -1,0 +1,86 @@
+class ProductInformation extends React.Component {
+  render() {
+    return (
+      <div className="producto">
+        <img src={this.props.src} alt={this.props.name}/>
+        <h4 className="name">{this.props.name}</h4>
+        <p className="price">{this.props.price}</p>
+      </div>
+      );
+  }
+}
+
+class Form extends React.Component {
+  render() {
+    const meses = ["Mes", "01", "02", "03", "04", "05", "06", "07", "08", "09", 10, 11, 12];
+    const anios = ["Año", 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47];
+    return (
+      <form>
+        <label>Número de tarjeta:
+          <br />
+          <input 
+            type="number"
+            placeholder="1111 2222 3333 4444"
+            name="tarjeta"/>
+        </label>
+        <br />
+        <label> Fecha de vencimiento:
+          <br />
+          <select>
+            {meses.map((mes, index) => {
+              return <option value={mes} key={index}>{mes}</option>
+            })}
+          </select>
+          <select>
+            {anios.map((a, index) => {
+              return <option value={a} key={index}>{a}</option>
+            })}
+          </select>
+        </label>
+        <br />
+        <label>Código de seguridad:
+          <br />
+          <input 
+            type="password"
+            name="password"
+            maxLength="4"/>
+        </label>
+        <br />
+        <button className="comprar" onClick={this.props.onClick}>Comprar</button>
+      </form>
+    );
+  }
+}
+
+class CreditCardInformation extends React.Component {
+  render() {
+    return (
+      <div className="creditcard">
+        <Form onClick={this.props.onClick} />
+      </div>
+    );
+  }
+}
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+  handleClick(e) {
+    e.preventDefault()
+  }
+  render() {
+    return (
+      <div className="container">
+        <ProductInformation 
+          name="Addidas Running Gear"
+          src="https://brand.campaign.adidas.com/Images/CLP%20IS%20Energy%20Foreground%20Desktop_tcm66-143411.png?locale=en_US&device=mobile&version=6"
+          price="$3456"/>
+        <CreditCardInformation onClick={this.handleClick} />
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<App />, document.getElementById('root'));

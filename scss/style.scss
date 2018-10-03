@@ -1,0 +1,164 @@
+$creditcard: #f9f7f7;
+$green: #5bcc8e;
+$pink: #e48ff7;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+body {
+  background-color: #dbd9d9;
+}
+
+.container {
+  width: 90%;
+  height: 570px;
+  margin: 20px auto;
+  border-radius: 20px;
+  -webkit-box-shadow: 0px 1px 12px 1px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 1px 12px 1px rgba(0,0,0,0.75);
+  box-shadow: 0px 1px 12px 1px rgba(0,0,0,0.75);
+  background-color: $creditcard;
+}
+
+img {
+  width: 300px;
+  transition: all .5s;
+}
+img:hover {
+  transform: scale(1.04);
+  cursor: pointer;
+}
+
+h4, p {
+  text-align:center;
+  font-family: 'Sanchez', serif;
+}
+p {
+  margin-top: 10px;
+  letter-spacing: 2px;
+  font-weight: bolder;
+  font-size: 1.4rem;
+}
+.producto {
+  width: 100%;
+  height: 250px;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  background: linear-gradient(90deg, $green, $pink);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.creditcard {
+  padding-top: 20px;
+  width: 90%;
+  margin: 0 auto;
+  height: 300px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+
+}
+
+input, select {
+  font-family: 'M PLUS 1p', sans-serif;
+  margin: 6px 0;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid $green;
+  background-color: $creditcard;
+}
+
+label {  
+font-family: 'M PLUS 1p', sans-serif;
+
+}
+
+select {
+  padding: 10px;
+  margin-left: 5px;
+  border: none;
+  border-bottom: 1px solid $green;
+  background-color: $creditcard;
+}
+button {
+  padding: 10px;
+  padding-right: 30px;
+  padding-left: 30px;
+  border-radius: 20px;
+  border: 2px solid #22d67f;
+  background: linear-gradient(90deg, $green, $pink);
+  cursor: pointer;
+  font-family: 'Gudea', sans-serif;
+  font-weight: bolder;
+  font-size: .9rem;
+  transition: all .5s;
+
+  margin-top: 10px;
+  width: 100%;
+}
+
+button:hover {
+  background: white;
+  
+}
+
+
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+input[type="number"] {
+-moz-appearance: textfield;
+}
+
+@media (min-width: 768px) {
+  .creditcard, .producto {
+    float: left;
+    width: 50%;
+    height: 100%;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 0px;
+  }
+  
+  img {
+    width: 400px;
+    transform: rotate(0deg);
+  }
+  
+  h4 {
+    font-size: 1.2rem;
+  }
+  
+  .creditcard{
+    width: 40%;
+    margin: 100px 20px 0 40px;
+  }
+  
+  label {
+    font-size: 1.2rem;
+  }
+  
+  select {
+    font-size: 1.2rem;
+  }
+
+}
+@media (min-width: 800px) {
+  img {
+    width: 450px;
+  }
+}
+@media (min-width: 1056px) {
+  .container {
+    width: 1000px;
+    margin-top: 30px;
+  }
+}
